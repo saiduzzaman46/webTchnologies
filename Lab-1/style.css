@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body{
+    position: absolute;
+} */
+div{
+    width: 300px;
+    height: 200px;
+    background-color:bisque;
+    padding: 10px;
+    border-radius: 9px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+}
+
+.login{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+    row-gap: 10px;
+    place-items: center;
+}
+
+.login input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.login label{
+    align-self: center;
+}

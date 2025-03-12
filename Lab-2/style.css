@@ -1,0 +1,60 @@
+header div {
+  margin: 0 auto;
+}
+main h1 {
+  text-align: center;
+}
+.logo {
+  background-color: chocolate;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.continer {
+  background-color: #f1f1f1;
+  max-width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.red {
+  background-color: red;
+  flex: 1;
+}
+
+.green,
+.blue {
+  flex: 1;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+
+/* .red {
+  background-color: red;
+  grid-row: 1/3;
+}
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+  grid-column:2/3; 
+} */
