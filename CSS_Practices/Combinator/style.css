@@ -1,0 +1,42 @@
+.container {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+/* 1. Descendant combinator (space) - */
+
+.container p {
+  background-color: orange;
+}
+
+/* 2. Child combinator (>) - */
+/* all children are descendants but not all descendants are children */
+
+.container > p {
+  color: blue;
+  font-size: 20px;
+}
+
+/* 3. General sibling combinator (~) - */
+
+.container ~ p {
+    background-color: lightblue;
+}
+
+/* .container~div p {
+    background-color: rgb(61, 186, 228);
+} */
+
+/* 4. Adjacent sibling combinator (+) - */
+
+/* no change because this selector targets only 
+the immediate sibling that comes directly after */
+
+.container + p {
+    font-size: 30px;
+} 
+
+.container + div + p {
+    font-size: 30px;
+} 
+

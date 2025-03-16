@@ -1,0 +1,38 @@
+p,ul{
+    color: #333;
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+}
+
+h1::first-letter{
+    font-size: 2em;
+    font-style: italic;
+}
+
+p::first-line{
+    font-weight: bold;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li::before{
+    content: "✔️";
+    margin-right: 0.5em;
+    color: green;
+}
+
+li:nth-child(1)::after{
+    content: "🍏";
+   
+}   
+
+li:nth-child(2)::after{
+    content: "🍌";
+}   
+
+li:nth-last-child(1)::after{
+    content: "🍊";
+}
+
