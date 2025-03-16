@@ -1,0 +1,87 @@
+a:link, a:visited {
+    font-size: 30px;
+    color:orange;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #FF0000;
+    text-decoration: none;
+}
+
+a:active{
+    color: #0000FF;
+    text-decoration: none;
+}
+
+
+li{
+    display: inline-block;
+    padding: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    
+}
+li:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
+/* li:not(:hover){
+    background-color: #f1f1f1;
+} */
+
+/* First child
+li:nth-child(1){
+    background-color: #FF0000;
+} */
+
+/* Last child
+li:nth-last-child(1){
+    background-color: #0000FF;
+} */
+
+/* Even
+li:nth-child(even){
+    background-color: #FF00FF;
+} */
+
+/* Odd
+li:nth-child(odd){
+    background-color: #00FF00;
+}  */
+
+/* every third element
+li:nth-child(3n){
+    background-color: #FF00FF;
+} */
+
+
+/* every third element but start first */
+li:nth-child(3n+1){
+    background-color: #FF00FF;
+}
+
+.greeting{
+    font-size: 30px;
+    color: #333;
+}
+
+/*  Targets the first <p> element inside elements  */
+.greeting p:first-child{
+    color: #FF0000;
+}
+
+/*  Targets the last <p> element inside elements  */
+.greeting p:last-child{
+    background-color: bisque;
+    padding: 10px;
+    display: none;
+}
+
+/*  Targets the last <p> element inside elements  */
+.greeting:hover p:last-child{
+    display: block;
+}
