@@ -15,7 +15,7 @@ main h1 {
 .continer {
   background-color: #f1f1f1;
   max-width: 1000px;
-  height: auto;
+  height: 300px;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -27,11 +27,9 @@ main h1 {
   flex-direction: column;
 }
 
-.register {
-  /* background-color: red; */
-  border: 2px solid black;
+.red {
+  background-color: red;
   flex: 1;
-  padding: 20px;
 }
 
 .green,
@@ -59,10 +57,3 @@ main h1 {
   background-color: blue;
   grid-column:2/3; 
 } */
-
-
-/* Design register Form */
-
-.register-form h2 {
-  text-align: center;
-}

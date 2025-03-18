@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo"></div>
+    </header>
+    <main>
+      <h1>Title</h1>
+      <div class="continer">
+        <div class="column">
+          <div class="register">
+            <form class="register-form">
+              <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+              </div>
+
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required />
+              </div>
+
+              <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                  <option value="">Select</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Gender:</label>
+                <div class="gender-group">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    required
+                  />
+                  <label for="male">Male</label>
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    required
+                  />
+                  <label for="female">Female</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color" name="color" />
+              </div>
+
+              <div class="form-group">
+                <label for="opinion">Your Opinion:</label>
+                <textarea
+                  id="opinion"
+                  name="opinion"
+                  rows="4"
+                  cols="25"
+                ></textarea>
+              </div>
+
+              <div class="terms-group">
+                <input type="checkbox" id="terms" name="terms" required />
+                <label for="terms">
+                  I agree to the
+                  <a href="/terms" target="_blank">terms and conditions</a>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <input class="submit" type="submit" value="Register" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="column">
+          <div class="green"></div>
+          <div class="blue"></div>
+        </div>
+      </div>
+    </main>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
