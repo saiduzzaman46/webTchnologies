@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  background-color: #20211a;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.display-content {
+  background-color: inherit;
+  padding: 0.5rem 0rem;
+  height: 6rem;
+  width: auto;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+.claculate_value {
+  background-color: inherit;
+  color: #ababaa;
+  font-size: 1.5rem;
+  text-align: right;
+  border: none;
+}
+.display {
+  background-color: inherit;
+  color: #fff;
+  font-size: 3rem;
+  text-align: right;
+  border: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+button {
+  background-color: #3c3c3c;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.number:hover {
+  background-color: #323232;
+}
+.operator,
+.clear,
+.deleteLast {
+  background-color: #323232;
+}
+
+.operator:hover,
+.clear:hover,
+.deleteLast:hover {
+  background-color: #3c3c3c;
+}
+
+.equal {
+  background-color: #5cb7f8;
+  grid-column: span 2;
+}
+
+.equal:hover {
+  background-color: #47b1e8;
+}

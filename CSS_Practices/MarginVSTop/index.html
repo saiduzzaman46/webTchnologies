@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS PROPERTIES</title>
+    <style>
+        .container {
+            border: 5px solid purple;
+            width: max-content;
+            
+        }
+        .box1, .box2 {
+            height: 100px;
+            width: 100px;          
+        }
+        .box1 {
+           /*margin-top: 50px; */
+           position: relative;
+           top:50px;
+            background-color: blueviolet;
+              /* opacity: 0.5; */
+             
+            z-index: 3;
+        }
+        .box2 {
+            background-color: burlywood;
+          /*  opacity: 0.5; */
+          z-index: 2;
+          position: relative;
+        }
+    </style>
+</head>
+<body> 
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
