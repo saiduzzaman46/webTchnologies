@@ -238,7 +238,7 @@ function validate() {
     return false;
   } else if (!nameValidate.test(name.value)) {
     document.querySelector(".errorName").textContent =
-      "Name must contain only letters and spaces.";
+      "Name contain only letters and spaces.";
     name.value = "";
 
     return false;

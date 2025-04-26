@@ -113,25 +113,20 @@ main h1 {
   display: flex;
   align-items: center;
   gap: 8px;
-  ;
+  position: relative;
+  left: -15px;
 }
 .terms-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 10px 0;
-}
-.terms-group div {
-  display: flex;
-  align-items: center;
-  gap: 2px;
+  margin: 10px 0 ;
 }
 
 .submit {
   background-color: #333;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 10px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -151,4 +146,7 @@ main h1 {
   color: red;
   font-size: 12px;
   height: 10px;
+}
+.errorTerms{
+  margin-left: 20px;
 }
