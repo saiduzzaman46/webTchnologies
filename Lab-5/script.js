@@ -192,12 +192,7 @@ const countries = [
   "Zambia",
   "Zimbabwe",
 ];
-const color = document.getElementById("color");
-const changeColor = document.getElementById("green");
 
-color.addEventListener("input", function (event) {
-  changeColor.style.backgroundColor = event.target.value;
-});
 
 const countrySelect = document.getElementById("country");
 
@@ -227,6 +222,7 @@ function validate() {
   const dobYear = parseInt(dob.value);
   const termsCheckbox = document.getElementById("terms");
 
+  const passwordValidate = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   const nameValidate = /^[A-Za-z\s]+$/;
   const emailValidate = /^\d{2}-\d{5}-[1-3]@student\.aiub\.edu$/;
   const passwordLength = 8;
@@ -262,6 +258,12 @@ function validate() {
   } else if (password.value.length < passwordLength) {
     document.querySelector(".errorPass").textContent =
       "Password at least 8 characters long.";
+
+    return false;
+  }else if (!passwordValidate.test(password.value)) {
+    document.querySelector(".errorPass").textContent =
+      "letter,number, and special character.";
+    password.value = "";
 
     return false;
   }
@@ -310,3 +312,4 @@ function validate() {
   alert("Form submitted successfully!");
   return true;
 }
+
