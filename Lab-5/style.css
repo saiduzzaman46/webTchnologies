@@ -14,7 +14,7 @@ main h1 {
   height: 100px;
   border-radius: 50%;
   margin: 0 auto;
-  display: none;
+  /* display: none; */
 }
 
 .continer {
@@ -33,25 +33,22 @@ main h1 {
 }
 
 .register {
-  /* background-color: red; */
-  /* border: 2px solid black; */
-  flex: 1;
-  padding: 20px;
+  /* flex: 1; */
+  /* padding: 20px; */
   margin-right: 10px;
 }
 
-.green,
-.blue {
+.green{
   flex: 1;
+  border: #333 solid 2px;
+  margin-bottom: 10px; 
 }
-
-.green {
-  background-color: green;
-}
-
 .blue {
-  background-color: blue;
+  flex: 2;
+  border: #333 solid 2px;
 }
+
+
 
 /* .red {
   background-color: red;
@@ -92,14 +89,14 @@ main h1 {
   color: #333;
   font-weight: 500;
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   /* width: 60%; */
-  padding: 8px;
+  padding: 6px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -114,7 +111,7 @@ main h1 {
   align-items: center;
   gap: 8px;
   position: relative;
-  left: -15px;
+  /* left: -15px; */
 }
 .terms-group {
   display: flex;

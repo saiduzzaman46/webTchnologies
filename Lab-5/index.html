@@ -117,7 +117,7 @@
 
               <div class="terms-group">
                 <div>
-                  <input type="checkbox" id="terms" name="terms" /> 
+                  <input type="checkbox" id="terms" name="terms" />
                   <label for="terms" class="terms-label">
                     I agree to the
                     <a href="/terms" target="_blank">terms and conditions</a>
@@ -132,7 +132,29 @@
           </div>
         </div>
         <div class="column">
-          <div class="green" id="green"></div>
+          <div class="green" id="green">
+            <form class="register-form" onsubmit="return validate()">
+              <h2>Register</h2>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <div class="input-group">
+                  <input type="email" id="email" name="email" r />
+                  <p class="error errorEmail"></p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="input-group">
+                  <input type="password" id="password" name="password" />
+
+                  <p class="error errorPass"></p>
+                </div>
+              </div>
+
+              <input class="submit" type="submit" value="Register" />
+            </form>
+          </div>
           <div class="blue"></div>
         </div>
       </div>
