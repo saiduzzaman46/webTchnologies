@@ -99,7 +99,7 @@ function validate() {
 
     return false;
   }
-  alert("Form submitted successfully!");
+  // alert("Form submitted successfully!");
 
   document.querySelector('.popup-container').classList.remove('hidden');
   document.querySelectorAll('.registration-data p')[0].innerHTML = `Name: ${name.value}`;

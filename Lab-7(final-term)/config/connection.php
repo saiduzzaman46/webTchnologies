@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $conn = new mysqli("localhost", "root", "", "web_tech");
+    $conn = new mysqli("localhost", "root", "", "aqi");
     if ($conn->connect_error) {
         throw new Exception("Connection failed: " . $conn->connect_error);
     }

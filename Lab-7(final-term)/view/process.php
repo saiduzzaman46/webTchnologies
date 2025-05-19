@@ -2,8 +2,8 @@
 session_start();
 
 if (!isset($_SESSION['registration_data'])) {
-    header("Location: ../index.php?register=error");
-    exit();
+  header("Location: ../index.php?register=error");
+  exit();
 }
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,6 @@ if (!isset($_SESSION['registration_data'])) {
 
   <div class="container">
     <div class="inner-container">
-
       <p>Full Name: <?php echo htmlspecialchars($_SESSION['registration_data']['fname'] ?? ''); ?></p>
       <p>Email: <?php echo htmlspecialchars($_SESSION['registration_data']['email'] ?? ''); ?></p>
       <p>Birth Year: <?php echo htmlspecialchars($_SESSION['registration_data']['dob'] ?? ''); ?></p>
@@ -29,17 +28,16 @@ if (!isset($_SESSION['registration_data'])) {
       <p>Gender: <?php echo htmlspecialchars($_SESSION['registration_data']['gender'] ?? ''); ?></p>
       <p>Favorite Color: <?php echo htmlspecialchars($_SESSION['registration_data']['color'] ?? ''); ?></p>
       <p>Opinion: <?php echo htmlspecialchars($_SESSION['registration_data']['opinion'] ?? ''); ?></p>
-
-      <?php
-      unset($_SESSION['registration_data']);
-      ?>
-
-      <div class="button-container">
-        <button class="confirm">Confirm</button>
-        <button class="cancel" onclick="window.location.href='../index.php';">Cancel</button>
-      </div>
+      <form method="post" action="../controller/process_contr.php">
+        <div class="button-container">
+        <button class="confirm" type="submit" name="confirm">Confirm</button>
+        <input class="cancel" type="submit" name="cancel" value="Cancel">
+        </div>
+      </form>
     </div>
   </div>
 </body>
-
+<!-- onclick="window.location.href='../index.php';" -->
 </html>
+
+

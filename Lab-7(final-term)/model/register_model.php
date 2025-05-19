@@ -1,9 +1,8 @@
 <?php
-require_once '../config/connection.php';
 
 function get_email(object $conn, string $email)
 {
-    $query = "SELECT * FROM `register` WHERE `email` = '$email';";
+    $query = "SELECT * FROM `user` WHERE `email` = '$email';";
     $result = $conn->query($query);
     if ($result->num_rows > 0) {
         return true;
@@ -15,7 +14,7 @@ function get_email(object $conn, string $email)
 function insert_user(object $conn, string $fname, string $email, string $password, int $dob, string $country, string $gender, string $color, string $opinion)
 {
 
-    $query = "INSERT INTO `register` (`fname`, `email`, `password`, `birth_year`, `country`, `gender`, `color`, `opinion`) 
+    $query = "INSERT INTO `user` (`fname`, `email`, `password`, `birth_year`, `country`, `gender`, `color`, `opinion`) 
                 VALUES ('$fname', '$email', '$password', '$dob', '$country', '$gender', '$color', '$opinion');";
     $conn->query($query);
 }
@@ -47,10 +46,9 @@ function get_aqi_data(object $conn)
 function selected_cities()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selected'])) {
-        $_SESSION['selected_rows'] = $_POST['selected'];
-    }
-    if (isset($_SESSION['selected_rows'])) {
-        foreach ($_SESSION['selected_rows'] as $row) {
+        session_start();
+        unset($_SESSION['login_success']);
+        foreach ($_POST['selected'] as $row) {
             $data = explode(",", $row);
             echo "<tr>";
             echo "<td>" . $data[0] . "</td>";
@@ -58,6 +56,8 @@ function selected_cities()
             echo "</tr>";
         }
     } else {
-        echo "<tr><td colspan='2'>No data available</td></tr>";
+        // echo "<tr><td colspan='2'>No data available</td></tr>";
+        header("Location: ../index.php");
+        die();
     }
 }

@@ -1,10 +1,7 @@
 
 <?php
 session_start();
-function create_user(object $conn, string $fname, string $email, string $password, int $dob, string $country, string $gender, string $color, string $opinion)
-{
-    insert_user($conn, $fname, $email, $password, $dob, $country, $gender, $color, $opinion);
-}
+
 
 function is_email_exists(object $conn, string $email)
 {
@@ -29,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['registration_data'] = [
         'fname' => $fname,
         'email' => $email,
+        'password' => $password,
         'dob' => $dob,
         'country' => $country,
         'gender' => $gender,
@@ -36,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'opinion' => $opinion
     ];
     try {
+        require_once '../config/connection.php';
         require_once '../model/register_model.php';
 
         $error = [];
@@ -51,15 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die();
         }
 
-        create_user($conn, $fname, $email, $password, $dob, $country, $gender, $color, $opinion);
 
-        
+
         unset($_SESSION['errorRegister']);
 
 
-        header("Location: ../view/process.php?register=success");
+        header("Location: ../view/process.php");
         die();
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
+}else {
+    header("Location: ../index.php");
+    die();
 }

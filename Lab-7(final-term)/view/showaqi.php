@@ -1,3 +1,7 @@
+<?php
+$bgColor = isset($_COOKIE['favorite_color']) ? htmlspecialchars($_COOKIE['favorite_color']) : '#f4f4f4';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: <?php echo $bgColor; ?>;
             margin-top: 30px;
         }
 
@@ -18,11 +22,12 @@
         }
 
         table {
-            width: 50%;
+            width: 30%;
             border-collapse: collapse;
             margin-bottom: 20px;
             /* max-width: 600px; */
             margin: 10px auto;
+            background-color: #f9f9f9;
         }
 
         th,
@@ -45,12 +50,12 @@
         }
 
         .footertr {
-            border: none;
-
+            border: 0 solid <?php echo $bgColor; ?>;
+            background-color: <?php echo $bgColor; ?>;
         }
 
         .footertr:hover {
-            background-color: #f9f9f9;
+            background-color: <?php echo $bgColor; ?>;
             padding: 0px;
             margin: 0px;
         }
@@ -62,7 +67,7 @@
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 40px;
+            padding: 10px 50px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -83,7 +88,6 @@
             </thead>
             <tbody>
                 <?php
-                session_start();
                 require_once '../model/register_model.php';
                 selected_cities();
                 ?>

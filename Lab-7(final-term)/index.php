@@ -2,6 +2,7 @@
 session_start();
 require_once 'view/tableView.php';
 require_once 'view/register_view.php';
+require_once 'view/login_view.php';
 ?>
 
 <!DOCTYPE html>
@@ -131,20 +132,20 @@ require_once 'view/register_view.php';
                 <p class="error errorTerms"></p>
               </div>
             </div>
-            <input class="submit" type="submit" value="Register" />
+            <input class="submit" type="submit" value="Register" name="register" />
           </form>
         </div>
       </div>
       <div class="column">
         <div class="login" id="green">
-          <form class="login-form" onsubmit="return validateLogin()">
+          <form class="login-form" action="controller/login_contr.php" method="POST">
             <h2>Login</h2>
 
             <div class="form-group">
               <label for="email">Email:</label>
               <div class="input-group">
                 <input type="email" id="lEmail" name="email" />
-                <p class="error lerrorEmail"></p>
+                <?php check_error_email() ?>
               </div>
             </div>
 
@@ -152,7 +153,7 @@ require_once 'view/register_view.php';
               <label for="password">Password:</label>
               <div class="input-group">
                 <input type="password" id="lPassword" name="password" />
-                <p class="error lerrorPass"></p>
+                <?php check_error_password() ?>
               </div>
             </div>
 
