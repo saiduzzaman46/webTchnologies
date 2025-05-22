@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             if (get_password($conn, $email, $password)) {
                 $_SESSION['login_success'] = true;
+                $color = get_user_color($conn,$email);
+                setcookie('favorite_color', $color, time() + (86400 * 30), "/");
                 header("Location: ../view/request.php");
                 die();
             } else {

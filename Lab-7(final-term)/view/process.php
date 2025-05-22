@@ -17,7 +17,7 @@ if (!isset($_SESSION['registration_data'])) {
 </head>
 
 <body>
-  <h1>Here is your information</h1>
+  <h1>Here is your input information</h1>
 
   <div class="container">
     <div class="inner-container">

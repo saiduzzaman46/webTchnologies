@@ -92,7 +92,7 @@ if (!isset($_SESSION['login_success'])) {
   <h2>Select At Least 10 Cities</h2>
 
 
-  <form onsubmit="return validatSelection()" action="showaqi.php" method="POST">
+  <form onsubmit="return validatSelection()" action="../controller/aqi_contr.php" method="POST">
     <table border="1">
       <thead>
         <tr>
@@ -105,7 +105,7 @@ if (!isset($_SESSION['login_success'])) {
       <tbody>
         <?php
         require_once '../config/connection.php';
-        require_once '../model/register_model.php';
+        require_once '../model/aqi_model.php';
         get_aqi_data($conn);
         ?>
       </tbody>
@@ -125,7 +125,7 @@ if (!isset($_SESSION['login_success'])) {
       const checkedBoxes = document.querySelectorAll('.checkbox:checked');
       const errorMessage = document.querySelector('.error');
 
-      if (checkedBoxes.length < 10) {
+      if (checkedBoxes.length > 10) {
         errorMessage.textContent = "Please select at least 10 rows.";
         return false;
       }

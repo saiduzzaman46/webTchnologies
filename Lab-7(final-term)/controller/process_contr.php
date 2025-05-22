@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       create_user($conn, $fname, $email, $password, $dob, $country, $gender, $color, $opinion);
 
-      setcookie('favorite_color', $color, time() + (86400 * 30), "/");
+      // setcookie('favorite_color', $color . '|' . $email, time() + (86400 * 30), "/");
       unset($_SESSION['registration_data']);
 
       header("Location: ../index.php?register=success");
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
   }
-}else {
+} else {
   header("Location: ../index.php");
   die();
 }

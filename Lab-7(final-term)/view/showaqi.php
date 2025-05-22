@@ -1,5 +1,11 @@
 <?php
+session_start();
 $bgColor = isset($_COOKIE['favorite_color']) ? htmlspecialchars($_COOKIE['favorite_color']) : '#f4f4f4';
+
+if (!isset($_SESSION['login_success'])) {
+    header("Location: ../index.php");
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -72,36 +78,57 @@ $bgColor = isset($_COOKIE['favorite_color']) ? htmlspecialchars($_COOKIE['favori
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .username {
+            text-align: center;
+            font-size: 15px;
+            color: #f9f9f9;
+            margin-bottom: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #f9f9f9;
+        }
     </style>
 </head>
 
 <body>
     <h2>Selected City with AQI Data</h2>
+    <p class="username">
+        User Name:
+        <a href="../view/userDetail_view.php">
+            <?php echo isset($_SESSION['user']['fname']) ? htmlspecialchars($_SESSION['user']['fname']) : 'Guest'; ?>
+        </a>
+    </p>
+    <table border="1">
 
-    <form action="../index.php" method="POST">
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>City</th>
-                    <th>AQI</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                require_once '../model/register_model.php';
-                selected_cities();
-                ?>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>AQI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            require_once '../config/connection.php';
+            require_once '../controller/aqi_contr.php';
+            show_selected_data($conn);
+            ?>
 
-            </tbody>
+        </tbody>
+        <form action="../controller/showaqi_contr.php" method="POST">
             <tfoot>
                 <tr class="footertr">
                     <td colspan="4">
-                        <input type="submit" value="Back" />
+                        <input type="submit" name="back" value="Back" />
+                        <input type="submit" name="logout" value="LOG OUT" />
                     </td>
                 </tr>
             </tfoot>
-        </table>
-    </form>
+        </form>
+    </table>
+
 
 
 
